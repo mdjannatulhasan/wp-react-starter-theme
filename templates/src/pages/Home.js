@@ -3,7 +3,7 @@ import '../styles/Home.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to Your WordPress React Theme</h1>
@@ -12,7 +12,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="features">
+      <section className="features" id="about">
         <div className="container">
           <h2>Why Choose This Theme?</h2>
           <div className="features-grid">
@@ -43,7 +43,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="cta-section">
+      <section className="cta-section" id="contact">
         <div className="container">
           <h2>Ready to Build Something Amazing?</h2>
           <p>Start building your next WordPress site with React today.</p>

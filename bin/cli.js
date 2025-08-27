@@ -101,6 +101,13 @@ function main() {
     // Update package.json with theme name
     updatePackageJson(themeName, targetDir);
     
+    // Copy env.example to .env
+    const envExamplePath = path.join(targetDir, 'env.example');
+    const envPath = path.join(targetDir, '.env');
+    if (fs.existsSync(envExamplePath)) {
+      fs.copyFileSync(envExamplePath, envPath);
+    }
+    
     log('\n✅ WordPress React theme created successfully!', 'green');
     log('\n📋 Next steps:', 'blue');
     

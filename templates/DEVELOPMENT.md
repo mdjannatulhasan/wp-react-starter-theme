@@ -12,13 +12,20 @@ This guide explains how to develop with your WordPress React theme.
    define('WP_DEBUG_LOG', true);
    ```
 
-2. **Start React development server**:
+2. **Configure environment variables** (optional):
+   ```bash
+   # The .env file is automatically created from env.example
+   # You can modify it to customize behavior
+   cp env.example .env
+   ```
+
+3. **Start React development server**:
    ```bash
    cd your-theme-directory
    npm run dev
    ```
 
-3. **Visit your WordPress site** - The React app will load from the dev server
+4. **Visit your WordPress site** - The React app will load from the dev server
 
 ### **Option 2: Production Mode**
 
@@ -28,6 +35,15 @@ This guide explains how to develop with your WordPress React theme.
    ```
 
 2. **Visit your WordPress site** - The React app will load from the built bundle
+
+### **Environment Variables**
+
+The theme uses environment variables for configuration:
+
+- `REACT_APP_IS_WORDPRESS` - Set to 'true' for WordPress mode
+- `REACT_APP_DEV_MODE` - Set to 'true' for development mode
+- `REACT_APP_THEME_NAME` - Theme name for display
+- `REACT_APP_API_BASE_URL` - WordPress REST API base URL
 
 ## 🔧 **Troubleshooting**
 

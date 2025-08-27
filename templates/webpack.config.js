@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = (env, argv) => {
   const isDevelopment = argv.mode === 'development';
@@ -43,6 +44,11 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
+      }),
+      new webpack.DefinePlugin({
+        'process.env.REACT_APP_IS_WORDPRESS': JSON.stringify('true'),
+        'process.env.REACT_APP_DEV_MODE': JSON.stringify(isDevelopment ? 'true' : 'false'),
+        'process.env.REACT_APP_THEME_NAME': JSON.stringify('WP React Starter Theme'),
       }),
     ],
     devServer: {

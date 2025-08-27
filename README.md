@@ -136,9 +136,8 @@ MIT License - feel free to use this theme for any project.
 
 If you have any questions or need help:
 
-1. Check the [documentation](https://github.com/yourusername/wp-react-starter-theme)
-2. Open an [issue](https://github.com/yourusername/wp-react-starter-theme/issues)
-3. Join our [community](https://discord.gg/your-community)
+1. Check the [documentation](https://github.com/mdjannatulhasan/wp-react-starter-theme)
+2. Open an [issue](https://github.com/mdjannatulhasan/wp-react-starter-theme/issues)
 
 ## 🙏 Acknowledgments
 

@@ -24,7 +24,17 @@ npm install -g wp-react-starter-theme
 ### Create a New Theme
 
 ```bash
+# Basic usage
 wp-react-starter my-awesome-theme
+
+# Overwrite existing theme
+wp-react-starter my-awesome-theme --force
+
+# Install directly to WordPress themes directory
+wp-react-starter my-awesome-theme --wp-themes=/path/to/wp-content/themes
+
+# Combine options
+wp-react-starter my-awesome-theme --wp-themes=/path/to/wp-content/themes --force
 ```
 
 Or if you prefer npx:
@@ -35,6 +45,8 @@ npx wp-react-starter-theme my-awesome-theme
 
 ## 🛠️ Development
 
+### Option 1: Standard Installation
+
 After creating your theme, navigate to the theme directory and install dependencies:
 
 ```bash
@@ -42,6 +54,36 @@ cd my-awesome-theme
 npm install
 npm run build
 ```
+
+### Option 2: Direct WordPress Installation
+
+Install directly to your WordPress themes directory to avoid manual uploads:
+
+```bash
+# Install to WordPress themes directory
+wp-react-starter my-awesome-theme --wp-themes=/Applications/XAMPP/xamppfiles/htdocs/wordpress-test/wp-content/themes
+
+# Navigate to theme directory
+cd /Applications/XAMPP/xamppfiles/htdocs/wordpress-test/wp-content/themes/my-awesome-theme
+
+# Install dependencies and start development
+npm install
+npm run dev
+```
+
+### Option 3: Overwrite Existing Theme
+
+If you want to update an existing theme without manual deletion:
+
+```bash
+wp-react-starter my-awesome-theme --force
+```
+
+### CLI Options
+
+- `--force` or `-f` - Overwrite existing theme directory
+- `--wp-themes=PATH` - Install directly to WordPress themes directory
+- `--help` - Show help information
 
 ### Available Scripts
 

@@ -10,7 +10,10 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
       clean: true,
-      publicPath: isDevelopment ? 'http://localhost:3000/' : '/',
+      publicPath: isDevelopment ? 'http://localhost:3000/' : '/wp-content/themes/my-awesome-theme/dist/',
+      library: 'ReactApp',
+      libraryTarget: 'umd',
+      globalObject: 'this',
     },
     module: {
       rules: [
@@ -32,6 +35,10 @@ module.exports = (env, argv) => {
     },
     resolve: {
       extensions: ['.js', '.jsx'],
+    },
+    externals: {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
     },
     plugins: [
       new HtmlWebpackPlugin({

@@ -39,10 +39,12 @@ This guide explains how to develop with your WordPress React theme.
   - Make sure you've run `npm install`
   - Run `npm run build` for production
   - Or run `npm run dev` for development
+  - **Fixed in v1.0.3**: React and ReactDOM are now loaded from CDN
 
 #### **Route Matching Errors**
 - **Cause**: React Router can't match WordPress URLs
 - **Solution**: The theme now includes a catch-all route that redirects to home
+- **Fixed in v1.0.3**: Better URL handling and fallback routes
 
 #### **CORS Errors in Development**
 - **Cause**: WordPress and React dev server on different ports

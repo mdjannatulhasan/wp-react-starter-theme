@@ -65,15 +65,30 @@ function updatePackageJson(themeName, targetDir) {
 function main() {
   const args = process.argv.slice(2);
   const themeName = args[0] || 'my-wp-react-theme';
+  const forceOverwrite = args.includes('--force') || args.includes('-f');
+  const wpThemesDir = args.find(arg => arg.startsWith('--wp-themes='))?.split('=')[1];
   
   log('🚀 Creating WordPress React Starter Theme...', 'blue');
   log(`Theme name: ${themeName}`, 'green');
   
-  const targetDir = path.join(process.cwd(), themeName);
+  let targetDir;
+  if (wpThemesDir) {
+    targetDir = path.join(wpThemesDir, themeName);
+    log(`📁 Installing to WordPress themes directory: ${wpThemesDir}`, 'blue');
+  } else {
+    targetDir = path.join(process.cwd(), themeName);
+  }
   
   if (fs.existsSync(targetDir)) {
-    log(`❌ Directory "${themeName}" already exists!`, 'red');
-    process.exit(1);
+    if (forceOverwrite) {
+      log(`⚠️  Directory "${themeName}" exists. Overwriting...`, 'yellow');
+      fs.rmSync(targetDir, { recursive: true, force: true });
+    } else {
+      log(`❌ Directory "${themeName}" already exists!`, 'red');
+      log('💡 Use --force or -f to overwrite existing theme', 'blue');
+      log('   Example: wp-react-starter my-theme --force', 'blue');
+      process.exit(1);
+    }
   }
   
   try {
@@ -88,10 +103,24 @@ function main() {
     
     log('\n✅ WordPress React theme created successfully!', 'green');
     log('\n📋 Next steps:', 'blue');
-    log(`   cd ${themeName}`, 'yellow');
-    log('   npm install', 'yellow');
-    log('   npm run build', 'yellow');
-    log('   Activate the theme in WordPress admin', 'yellow');
+    
+    if (wpThemesDir) {
+      log('   ✅ Theme installed directly to WordPress themes directory', 'green');
+      log('   📝 Activate the theme in WordPress admin', 'yellow');
+      log('   🔧 For development, run these commands:', 'blue');
+      log(`      cd ${targetDir}`, 'yellow');
+      log('      npm install', 'yellow');
+      log('      npm run dev', 'yellow');
+    } else {
+      log(`   cd ${themeName}`, 'yellow');
+      log('   npm install', 'yellow');
+      log('   npm run build', 'yellow');
+      log('   📝 Upload to WordPress themes directory', 'yellow');
+      log('   📝 Activate the theme in WordPress admin', 'yellow');
+    }
+    
+    log('\n💡 Pro tip: Use --wp-themes=PATH to install directly to WordPress', 'blue');
+    log('   Example: wp-react-starter my-theme --wp-themes=/path/to/wp-content/themes', 'blue');
     log('\n🎉 Your theme is ready to use!', 'green');
     
   } catch (error) {

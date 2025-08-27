@@ -133,10 +133,14 @@ function wp_react_starter_theme_scripts() {
     // Enqueue the main theme stylesheet
     wp_enqueue_style('wp-react-starter-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
     
+    // Enqueue React and ReactDOM from CDN
+    wp_enqueue_script('react', 'https://unpkg.com/react@18/umd/react.production.min.js', array(), '18.2.0', true);
+    wp_enqueue_script('react-dom', 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js', array('react'), '18.2.0', true);
+    
     // Enqueue React app bundle if it exists
     $react_bundle_path = get_template_directory() . '/dist/bundle.js';
     if (file_exists($react_bundle_path)) {
-        wp_enqueue_script('wp-react-starter-theme-react', get_template_directory_uri() . '/dist/bundle.js', array(), _S_VERSION, true);
+        wp_enqueue_script('wp-react-starter-theme-react', get_template_directory_uri() . '/dist/bundle.js', array('react', 'react-dom'), _S_VERSION, true);
     }
 }
 add_action('wp_enqueue_scripts', 'wp_react_starter_theme_scripts');

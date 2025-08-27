@@ -1,6 +1,6 @@
 {
     "name": "wp-react-starter-theme",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A modern React-based starter theme for WordPress development",
     "main": "index.js",
     "bin": {

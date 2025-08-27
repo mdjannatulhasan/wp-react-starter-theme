@@ -40,12 +40,13 @@ After creating your theme, navigate to the theme directory and install dependenc
 ```bash
 cd my-awesome-theme
 npm install
+npm run build
 ```
 
 ### Available Scripts
 
 - `npm run dev` - Start development server with hot reloading
-- `npm run build` - Build for production
+- `npm run build` - Build for production (required for WordPress)
 - `npm start` - Start development server and open browser
 
 ## 📁 Project Structure
@@ -91,22 +92,22 @@ Create reusable components in `src/components/` and import them where needed.
 
 ## 🔧 WordPress Integration
 
-This starter theme is designed to be easily integrated with WordPress. To connect with WordPress:
+This is a **complete WordPress theme** that works out of the box! The theme includes:
 
-1. **Set up WordPress REST API endpoints**
-2. **Create PHP templates** that load the React app
-3. **Configure WordPress to serve the built React app**
+- ✅ **Complete WordPress theme files** (style.css, index.php, functions.php, etc.)
+- ✅ **React app integration** that loads automatically
+- ✅ **WordPress admin compatibility** (customizer, menus, widgets)
+- ✅ **SEO-friendly structure** with proper WordPress hooks
+- ✅ **Responsive design** that works on all devices
 
-Example `index.php` for WordPress:
+### How It Works
 
-```php
-<?php get_header(); ?>
+1. **Install and activate** the theme in WordPress admin
+2. **Build the React app** with `npm run build`
+3. **Your React app loads** automatically on the frontend
+4. **WordPress handles** the backend (admin, content management)
 
-<div id="root"></div>
-<script src="<?php echo get_template_directory_uri(); ?>/dist/bundle.js"></script>
-
-<?php get_footer(); ?>
-```
+The theme seamlessly combines WordPress's content management with React's modern frontend capabilities.
 
 ## 📱 Responsive Design
 

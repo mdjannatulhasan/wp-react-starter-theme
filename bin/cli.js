@@ -90,8 +90,9 @@ function main() {
     log('\n📋 Next steps:', 'blue');
     log(`   cd ${themeName}`, 'yellow');
     log('   npm install', 'yellow');
-    log('   npm run dev', 'yellow');
-    log('\n🎉 Happy coding!', 'green');
+    log('   npm run build', 'yellow');
+    log('   Activate the theme in WordPress admin', 'yellow');
+    log('\n🎉 Your theme is ready to use!', 'green');
     
   } catch (error) {
     log(`❌ Error creating theme: ${error.message}`, 'red');

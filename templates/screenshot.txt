@@ -1,0 +1,16 @@
+# Theme Screenshot Instructions
+
+To add a screenshot for your WordPress theme:
+
+1. Create a PNG image file named "screenshot.png"
+2. Recommended size: 1200x900 pixels
+3. Place it in the theme root directory (same level as style.css)
+4. The screenshot will appear in the WordPress admin theme selection
+
+Example screenshot content:
+- Show your React theme in action
+- Include the modern design elements
+- Display the hero section or main features
+- Use high-quality, professional imagery
+
+The screenshot helps users preview your theme before activating it.

@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.js', '.jsx'],
     },
-    externals: {
+    externals: isDevelopment ? {} : {
       'react': 'React',
       'react-dom': 'ReactDOM',
     },
@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
         template: './src/index.html',
       }),
       new webpack.DefinePlugin({
-        'process.env.REACT_APP_IS_WORDPRESS': JSON.stringify('true'),
+        'process.env.REACT_APP_IS_WORDPRESS': JSON.stringify(isDevelopment ? 'false' : 'true'),
         'process.env.REACT_APP_DEV_MODE': JSON.stringify(isDevelopment ? 'true' : 'false'),
         'process.env.REACT_APP_THEME_NAME': JSON.stringify('WP React Starter Theme'),
       }),

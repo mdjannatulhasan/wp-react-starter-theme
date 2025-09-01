@@ -23,7 +23,11 @@ if (typeof module !== 'undefined' && module.exports) {
   window.ReactApp = { default: initReactApp };
 }
 
-// Auto-initialize if not in WordPress context
-if (typeof window !== 'undefined' && !window.wp) {
-  document.addEventListener('DOMContentLoaded', initReactApp);
+// Auto-initialize if not in WordPress context or in development mode
+if (typeof window !== 'undefined' && (!window.wp || process.env.REACT_APP_DEV_MODE === 'true')) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReactApp);
+  } else {
+    initReactApp();
+  }
 }

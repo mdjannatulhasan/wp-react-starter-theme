@@ -1,7 +1,7 @@
 {
     "name": "wp-react-starter-theme",
-    "version": "1.0.4",
-    "description": "A modern React-based starter theme for WordPress development",
+    "version": "1.0.5",
+    "description": "A professional WordPress theme with React integration, featuring modern design, WordPress Customizer support, multiple menu locations, and seamless React component integration. Perfect for developers who want the power of React with WordPress's content management capabilities.",
     "main": "index.js",
     "bin": {
         "wp-react-starter": "./bin/cli.js"
@@ -16,10 +16,14 @@
         "wordpress",
         "react",
         "theme",
+        "professional",
         "starter",
         "boilerplate",
         "webpack",
-        "modern"
+        "modern",
+        "customizer",
+        "menus",
+        "widgets"
     ],
     "author": "Your Name",
     "license": "MIT",

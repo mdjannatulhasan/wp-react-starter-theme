@@ -1,6 +1,6 @@
 {
     "name": "wp-react-starter-theme",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A professional WordPress theme with React integration, featuring modern design, WordPress Customizer support, multiple menu locations, and seamless React component integration. Perfect for developers who want the power of React with WordPress's content management capabilities.",
     "main": "index.js",
     "bin": {

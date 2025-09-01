@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2024-12-19
+
+### Fixed
+- **WordPress Admin Bar Compatibility**: Added proper spacing for logged-in users
+  - Fixed header margin-top for WordPress admin bar (32px)
+  - Adjusted main content padding for logged-in users (50px vs 80px)
+- **Footer Menu Styling**: Improved footer menu layout and responsiveness
+  - Added proper flexbox layout for footer menu items
+  - Enhanced mobile responsiveness for footer content
+  - Fixed grid layout issues on smaller screens
+
+### Changed
+- **CSS Formatting**: Improved code formatting and indentation consistency
+- **Responsive Design**: Better mobile experience for logged-in WordPress users
+
+## [1.0.6] - 2024-12-19
+
+### Fixed
+- **Text Domain Consistency**: Fixed all instances of `wp-react-professional-theme` → `wp-react-starter-theme`
+- **Webpack Configuration**: Updated publicPath to use dynamic `WP_THEME_SLUG` with fallback
+- **Fallback Menu**: Improved fallback menu to use `wp_list_pages` instead of hardcoded links
+- **Template Synchronization**: Synced all template files from tested WordPress installation
+
 ## [1.0.5] - 2024-09-01
 
 ### Added

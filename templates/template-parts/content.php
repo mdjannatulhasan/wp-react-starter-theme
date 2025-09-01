@@ -22,7 +22,7 @@
                 <span class="posted-on">
                     <?php
                     printf(
-                        esc_html__('Posted on %s', 'wp-react-professional-theme'),
+                        esc_html__('Posted on %s', 'wp-react-starter-theme'),
                         '<time class="entry-date published updated" datetime="' . esc_attr(get_the_date(DATE_W3C)) . '">' . esc_html(get_the_date()) . '</time>'
                     );
                     ?>
@@ -30,7 +30,7 @@
                 <span class="byline">
                     <?php
                     printf(
-                        esc_html__('by %s', 'wp-react-professional-theme'),
+                        esc_html__('by %s', 'wp-react-starter-theme'),
                         '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
                     );
                     ?>
@@ -54,7 +54,7 @@
                 sprintf(
                     wp_kses(
                         /* translators: %s: Name of current post. Only visible to screen readers */
-                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-react-professional-theme'),
+                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-react-starter-theme'),
                         array(
                             'span' => array(
                                 'class' => array(),
@@ -67,7 +67,7 @@
 
             wp_link_pages(
                 array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'wp-react-professional-theme'),
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'wp-react-starter-theme'),
                     'after'  => '</div>',
                 )
             );
@@ -75,7 +75,7 @@
             the_excerpt();
             ?>
             <a href="<?php the_permalink(); ?>" class="read-more">
-                <?php esc_html_e('Read More', 'wp-react-professional-theme'); ?>
+                <?php esc_html_e('Read More', 'wp-react-starter-theme'); ?>
             </a>
         <?php endif; ?>
     </div><!-- .entry-content -->
@@ -84,14 +84,14 @@
         <?php if ('post' === get_post_type()) : ?>
             <div class="entry-footer-meta">
                 <?php
-                $categories_list = get_the_category_list(esc_html__(', ', 'wp-react-professional-theme'));
+                $categories_list = get_the_category_list(esc_html__(', ', 'wp-react-starter-theme'));
                 if ($categories_list) :
                     ?>
                     <span class="cat-links">
                         <?php
                         printf(
                             /* translators: 1: list of categories. */
-                            esc_html__('Posted in %1$s', 'wp-react-professional-theme'),
+                            esc_html__('Posted in %1$s', 'wp-react-starter-theme'),
                             $categories_list
                         );
                         ?>
@@ -99,14 +99,14 @@
                 <?php endif; ?>
 
                 <?php
-                $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'wp-react-professional-theme'));
+                $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'wp-react-starter-theme'));
                 if ($tags_list) :
                     ?>
                     <span class="tags-links">
                         <?php
                         printf(
                             /* translators: 1: list of tags. */
-                            esc_html__('Tagged %1$s', 'wp-react-professional-theme'),
+                            esc_html__('Tagged %1$s', 'wp-react-starter-theme'),
                             $tags_list
                         );
                         ?>

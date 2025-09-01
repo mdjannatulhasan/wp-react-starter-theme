@@ -403,8 +403,12 @@ function wp_react_professional_theme_get_menu_rest($request) {
  */
 function wp_react_professional_theme_fallback_menu() {
     echo '<ul id="primary-menu" class="nav-menu">';
-    echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'wp-react-starter-theme') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/about')) . '">' . esc_html__('About', 'wp-react-starter-theme') . '</a></li>';
-    echo '<li><a href="' . esc_url(home_url('/contact')) . '">' . esc_html__('Contact', 'wp-react-starter-theme') . '</a></li>';
+    // Output top-level pages as fallback items
+    wp_list_pages(
+        array(
+            'title_li' => '',
+            'depth'    => 1,
+        )
+    );
     echo '</ul>';
 }

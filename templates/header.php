@@ -12,7 +12,7 @@
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp-react-professional-theme'); ?></a>
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wp-react-starter-theme'); ?></a>
 
     <header id="masthead" class="site-header">
         <div class="header-container">
@@ -41,7 +41,7 @@
             <nav id="site-navigation" class="main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span class="hamburger"></span>
-                    <span class="screen-reader-text"><?php esc_html_e('Menu', 'wp-react-professional-theme'); ?></span>
+                    <span class="screen-reader-text"><?php esc_html_e('Menu', 'wp-react-starter-theme'); ?></span>
                 </button>
                 
                 <?php

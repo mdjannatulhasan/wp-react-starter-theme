@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-<div id="root" class="react-app-loading">
+<div id="root">
     <!-- React app will be loaded here -->
     <div style="text-align: center; padding: 50px;">
         <h1>Loading React App...</h1>

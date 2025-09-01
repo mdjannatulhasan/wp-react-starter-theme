@@ -44,7 +44,7 @@
                 <div class="site-info">
                     <?php
                     printf(
-                        esc_html__('© %1$s %2$s. All rights reserved.', 'wp-react-professional-theme'),
+                        esc_html__('© %1$s %2$s. All rights reserved.', 'wp-react-starter-theme'),
                         date('Y'),
                         get_bloginfo('name')
                     );
@@ -52,7 +52,7 @@
                     <span class="sep"> | </span>
                     <?php
                     printf(
-                        esc_html__('Powered by %1$s', 'wp-react-professional-theme'),
+                        esc_html__('Powered by %1$s', 'wp-react-starter-theme'),
                         '<a href="https://wordpress.org/">WordPress</a>'
                     );
                     ?>

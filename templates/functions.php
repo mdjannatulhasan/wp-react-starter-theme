@@ -2,7 +2,7 @@
 /**
  * WP React Professional Theme functions and definitions
  *
- * @package WP_React_Professional_Theme
+ * @package WP_React_Starter_Theme
  * @version 1.0.0
  */
 
@@ -17,7 +17,7 @@ function wp_react_professional_theme_setup() {
     /*
      * Make theme available for translation.
      */
-    load_theme_textdomain('wp-react-professional-theme', get_template_directory() . '/languages');
+    load_theme_textdomain('wp-react-starter-theme', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -40,9 +40,9 @@ function wp_react_professional_theme_setup() {
     // Register multiple navigation menus
     register_nav_menus(
         array(
-            'primary' => esc_html__('Primary Menu', 'wp-react-professional-theme'),
-            'footer' => esc_html__('Footer Menu', 'wp-react-professional-theme'),
-            'mobile' => esc_html__('Mobile Menu', 'wp-react-professional-theme'),
+            'primary' => esc_html__('Primary Menu', 'wp-react-starter-theme'),
+            'footer' => esc_html__('Footer Menu', 'wp-react-starter-theme'),
+            'mobile' => esc_html__('Mobile Menu', 'wp-react-starter-theme'),
         )
     );
 
@@ -133,9 +133,9 @@ add_action('after_setup_theme', 'wp_react_professional_theme_content_width', 0);
 function wp_react_professional_theme_widgets_init() {
     register_sidebar(
         array(
-            'name'          => esc_html__('Sidebar', 'wp-react-professional-theme'),
+            'name'          => esc_html__('Sidebar', 'wp-react-starter-theme'),
             'id'            => 'sidebar-1',
-            'description'   => esc_html__('Add widgets here.', 'wp-react-professional-theme'),
+            'description'   => esc_html__('Add widgets here.', 'wp-react-starter-theme'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -145,9 +145,9 @@ function wp_react_professional_theme_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => esc_html__('Footer Widget Area 1', 'wp-react-professional-theme'),
+            'name'          => esc_html__('Footer Widget Area 1', 'wp-react-starter-theme'),
             'id'            => 'footer-1',
-            'description'   => esc_html__('Add widgets here.', 'wp-react-professional-theme'),
+            'description'   => esc_html__('Add widgets here.', 'wp-react-starter-theme'),
             'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -157,9 +157,9 @@ function wp_react_professional_theme_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => esc_html__('Footer Widget Area 2', 'wp-react-professional-theme'),
+            'name'          => esc_html__('Footer Widget Area 2', 'wp-react-starter-theme'),
             'id'            => 'footer-2',
-            'description'   => esc_html__('Add widgets here.', 'wp-react-professional-theme'),
+            'description'   => esc_html__('Add widgets here.', 'wp-react-starter-theme'),
             'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -169,9 +169,9 @@ function wp_react_professional_theme_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => esc_html__('Footer Widget Area 3', 'wp-react-professional-theme'),
+            'name'          => esc_html__('Footer Widget Area 3', 'wp-react-starter-theme'),
             'id'            => 'footer-3',
-            'description'   => esc_html__('Add widgets here.', 'wp-react-professional-theme'),
+            'description'   => esc_html__('Add widgets here.', 'wp-react-starter-theme'),
             'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -181,9 +181,9 @@ function wp_react_professional_theme_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => esc_html__('Footer Widget Area 4', 'wp-react-professional-theme'),
+            'name'          => esc_html__('Footer Widget Area 4', 'wp-react-starter-theme'),
             'id'            => 'footer-4',
-            'description'   => esc_html__('Add widgets here.', 'wp-react-professional-theme'),
+            'description'   => esc_html__('Add widgets here.', 'wp-react-starter-theme'),
             'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
@@ -198,7 +198,7 @@ add_action('widgets_init', 'wp_react_professional_theme_widgets_init');
  */
 function wp_react_professional_theme_scripts() {
     // Enqueue the main theme stylesheet
-    wp_enqueue_style('wp-react-professional-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('wp-react-starter-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
     
     // Enqueue React and ReactDOM from CDN for production
     if (!is_admin()) {
@@ -209,7 +209,7 @@ function wp_react_professional_theme_scripts() {
     // Enqueue React app bundle if it exists
     $react_bundle_path = get_template_directory() . '/dist/bundle.js';
     if (file_exists($react_bundle_path)) {
-        wp_enqueue_script('wp-react-professional-theme-react', get_template_directory_uri() . '/dist/bundle.js', array('react', 'react-dom'), _S_VERSION, true);
+        wp_enqueue_script('wp-react-starter-theme-react', get_template_directory_uri() . '/dist/bundle.js', array('react', 'react-dom'), _S_VERSION, true);
     }
 
     // Enqueue comment reply script
@@ -218,7 +218,7 @@ function wp_react_professional_theme_scripts() {
     }
 
     // Enqueue navigation script
-    wp_enqueue_script('wp-react-professional-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    wp_enqueue_script('wp-react-starter-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'wp_react_professional_theme_scripts');
 
@@ -226,7 +226,7 @@ add_action('wp_enqueue_scripts', 'wp_react_professional_theme_scripts');
  * Add preconnect for Google Fonts.
  */
 function wp_react_professional_theme_resource_hints($urls, $relation_type) {
-    if (wp_style_is('wp-react-professional-theme-fonts', 'queue') && 'preconnect' === $relation_type) {
+    if (wp_style_is('wp-react-starter-theme-fonts', 'queue') && 'preconnect' === $relation_type) {
         $urls[] = array(
             'href' => 'https://fonts.gstatic.com',
             'crossorigin',
@@ -242,9 +242,9 @@ add_filter('wp_resource_hints', 'wp_react_professional_theme_resource_hints', 10
  */
 function wp_react_professional_theme_custom_image_sizes($sizes) {
     return array_merge($sizes, array(
-        'hero-image' => __('Hero Image', 'wp-react-professional-theme'),
-        'featured-image' => __('Featured Image', 'wp-react-professional-theme'),
-        'thumbnail-large' => __('Large Thumbnail', 'wp-react-professional-theme'),
+        'hero-image' => __('Hero Image', 'wp-react-starter-theme'),
+        'featured-image' => __('Featured Image', 'wp-react-starter-theme'),
+        'thumbnail-large' => __('Large Thumbnail', 'wp-react-starter-theme'),
     ));
 }
 add_filter('image_size_names_choose', 'wp_react_professional_theme_custom_image_sizes');
@@ -288,7 +288,7 @@ add_action('after_setup_theme', 'wp_react_professional_theme_woocommerce_setup')
 function wp_react_professional_theme_customize_register($wp_customize) {
     // Add section for React app settings
     $wp_customize->add_section('react_app_settings', array(
-        'title' => __('React App Settings', 'wp-react-professional-theme'),
+        'title' => __('React App Settings', 'wp-react-starter-theme'),
         'priority' => 30,
     ));
 
@@ -299,7 +299,7 @@ function wp_react_professional_theme_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('react_app_title', array(
-        'label' => __('React App Title', 'wp-react-professional-theme'),
+        'label' => __('React App Title', 'wp-react-starter-theme'),
         'section' => 'react_app_settings',
         'type' => 'text',
     ));
@@ -311,7 +311,7 @@ function wp_react_professional_theme_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('react_app_description', array(
-        'label' => __('React App Description', 'wp-react-professional-theme'),
+        'label' => __('React App Description', 'wp-react-starter-theme'),
         'section' => 'react_app_settings',
         'type' => 'textarea',
     ));
@@ -338,7 +338,7 @@ function wp_react_professional_theme_add_react_data() {
             ),
         );
 
-        wp_localize_script('wp-react-professional-theme-react', 'wpReactThemeData', $react_data);
+        wp_localize_script('wp-react-starter-theme-react', 'wpReactThemeData', $react_data);
     }
 }
 add_action('wp_enqueue_scripts', 'wp_react_professional_theme_add_react_data', 20);
@@ -396,4 +396,15 @@ function wp_react_professional_theme_get_menu_rest($request) {
     $menu_items = wp_react_professional_theme_get_menu_items($location);
     
     return new WP_REST_Response($menu_items, 200);
+}
+
+/**
+ * Fallback menu function for when no menu is assigned.
+ */
+function wp_react_professional_theme_fallback_menu() {
+    echo '<ul id="primary-menu" class="nav-menu">';
+    echo '<li><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'wp-react-starter-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/about')) . '">' . esc_html__('About', 'wp-react-starter-theme') . '</a></li>';
+    echo '<li><a href="' . esc_url(home_url('/contact')) . '">' . esc_html__('Contact', 'wp-react-starter-theme') . '</a></li>';
+    echo '</ul>';
 }

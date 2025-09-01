@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
       clean: true,
-      publicPath: isDevelopment ? 'http://localhost:3000/' : '/wp-content/themes/my-awesome-theme/dist/',
+      publicPath: isDevelopment ? 'http://localhost:3000/' : '/wp-content/themes/my-professional-theme/dist/',
       library: 'ReactApp',
       libraryTarget: 'umd',
       globalObject: 'this',

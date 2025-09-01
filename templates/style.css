@@ -91,6 +91,11 @@ body {
   z-index: 9999;
 }
 
+/* Ensure React app elements don't overlap admin bar */
+.react-app-loaded #wpadminbar {
+  z-index: 99999;
+}
+
 .admin-bar .site-header {
   top: 32px;
 }
@@ -536,6 +541,28 @@ body {
 .react-app-loaded .site-footer,
 .react-app-loaded .main-navigation {
   display: none;
+}
+
+/* Ensure body has admin-bar class when user is logged in */
+.admin-bar {
+  padding-top: 32px;
+}
+
+@media (max-width: 782px) {
+  .admin-bar {
+    padding-top: 46px;
+  }
+}
+
+/* Adjust main content area for React app when admin bar is present */
+.admin-bar .react-app-loaded .main-content {
+  padding-top: 80px; /* Header height */
+}
+
+@media (max-width: 782px) {
+  .admin-bar .react-app-loaded .main-content {
+    padding-top: 80px; /* Header height */
+  }
 }
 
 /* Loading state for React app */
